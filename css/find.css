@@ -1,0 +1,221 @@
+/* ===========================================================
+   FIND A MAGAZINE LIBRARY — map page styles
+   =========================================================== */
+
+.find-page {
+  justify-content: flex-start;
+  padding-bottom: 2rem;
+}
+
+.find-header {
+  text-align: center;
+  padding: 2rem 1rem 0.5rem;
+}
+
+.home-link {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.find-title {
+  color: var(--magenta);
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  margin: 0 0 0.4rem;
+}
+
+.find-sub {
+  margin: 0 0 1rem;
+}
+
+/* ---------- mini nav ---------- */
+.mini-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.mini-btn {
+  font-family: "Times New Roman", Times, serif;
+  text-decoration: none;
+  color: var(--ink);
+  padding: 0.5rem 1rem;
+}
+
+.mini-btn:hover,
+.mini-btn:focus-visible {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0 var(--ink);
+}
+
+.mini-btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.mini-green { background: var(--green); }
+.mini-gold  { background: var(--gold); }
+.mini-cyan  { background: var(--cyan); }
+.mini-pink  { background: var(--pink); }
+
+/* ---------- map ---------- */
+.map-section {
+  width: 100%;
+  max-width: 1000px;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+.map-frame {
+  width: 100%;
+  height: 60vh;
+  min-height: 380px;
+}
+
+.map-frame.picking {
+  cursor: crosshair;
+}
+
+.pick-banner {
+  margin-top: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--gold);
+  text-align: center;
+}
+
+.map-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.25rem;
+}
+
+/* ---------- leaflet popup ---------- */
+.popup-card {
+  max-width: 230px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.popup-card h3 {
+  margin: 0 0 0.25rem;
+  color: var(--magenta);
+}
+
+.popup-card .popup-address {
+  margin: 0 0 0.4rem;
+}
+
+.popup-card p.popup-desc {
+  margin: 0 0 0.5rem;
+}
+
+.popup-photos {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.popup-photos img {
+  width: 60px;
+  height: 44px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+/* ---------- submission panel ---------- */
+.submit-panel {
+  width: 100%;
+  max-width: 640px;
+  margin: 2rem auto 0;
+  padding: 1.5rem;
+  background: var(--cream);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.submit-heading {
+  margin-top: 0;
+  color: var(--purple);
+}
+
+.submit-form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.field-label {
+  font-weight: bold;
+  margin: 0.85rem 0 0.3rem;
+}
+
+.field-input {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+.photo-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 0.5rem;
+}
+
+.photo-preview img {
+  width: 64px;
+  height: 48px;
+  object-fit: cover;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.submit-success {
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  background: var(--green);
+}
+
+/* ---------- lightbox ---------- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.lightbox-img {
+  max-width: 85vw;
+  max-height: 80vh;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  font-size: 2.2rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.lightbox-nav {
+  background: var(--gold);
+  border: none;
+  width: 44px;
+  height: 44px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  margin: 0 1rem;
+}

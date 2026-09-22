@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find a Magazine Library</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/find.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+</head>
+<body>
+<div class="page-wrap find-page">
+
+  <header class="find-header">
+    <a class="home-link" href="index.html">&larr; Back home</a>
+    <h1 class="find-title">Find a Magazine Library</h1>
+    <p class="find-sub">Scroll and zoom the map. Click a pin to peek inside a library.</p>
+  </header>
+
+  <nav class="mini-nav" aria-label="Site sections">
+    <a class="mini-btn mini-green" href="find.html">Find a Library</a>
+    <a class="mini-btn mini-gold" href="donate.html">Donate</a>
+    <a class="mini-btn mini-cyan" href="about.html">About</a>
+    <a class="mini-btn mini-pink" href="media.html">Media</a>
+  </nav>
+
+  <section class="map-section">
+    <div id="map" class="map-frame"></div>
+
+    <div id="pick-banner" class="pick-banner hidden">
+      Click anywhere on the map to drop a pin at your library's location. You can drag it afterward to fine-tune the spot.
+    </div>
+
+    <div class="map-actions">
+      <button id="submit-toggle-btn" class="funky-btn btn-pink submit-toggle">
+        <span class="btn-icon" aria-hidden="true">📌</span>
+        Submit a Library
+      </button>
+    </div>
+  </section>
+
+  <!-- ============ submission panel ============ -->
+  <section id="submit-panel" class="submit-panel hidden">
+    <h2 class="submit-heading">Tell us about a Free Magazine Library</h2>
+    <p class="submit-note">
+      Every submission is reviewed before it goes live on the map &mdash; nothing appears publicly until it's approved.
+    </p>
+
+    <form id="submit-form" class="submit-form">
+      <label class="field-label" for="lib-name">Library name or nickname</label>
+      <input class="field-input" type="text" id="lib-name" name="name" required placeholder="e.g. The Corner Reading Post">
+
+      <label class="field-label" for="lib-address">Approximate address or cross-streets</label>
+      <input class="field-input" type="text" id="lib-address" name="address" required placeholder="e.g. Elm St & 4th Ave, New Haven, CT">
+
+      <p class="field-label" id="pin-status">Pin location: <span id="pin-coords">not set yet &mdash; click the map above</span></p>
+
+      <label class="field-label" for="lib-desc">Description</label>
+      <textarea class="field-input" id="lib-desc" name="description" rows="4" required placeholder="What kind of magazines does it usually have? Who built it? Anything visitors should know?"></textarea>
+
+      <label class="field-label" for="lib-photos">Photos (optional, a few is plenty)</label>
+      <input class="field-input" type="file" id="lib-photos" name="photos" accept="image/*" multiple>
+      <div id="photo-preview" class="photo-preview"></div>
+
+      <label class="field-label" for="lib-email">Your email (optional, in case we have questions)</label>
+      <input class="field-input" type="email" id="lib-email" name="submitterEmail" placeholder="you@example.com">
+
+      <div class="form-buttons">
+        <button type="submit" class="funky-btn btn-green">Submit for review</button>
+        <button type="button" id="cancel-submit" class="funky-btn btn-cyan">Cancel</button>
+      </div>
+    </form>
+
+    <p id="submit-success" class="submit-success hidden">
+      Thanks! Your submission is saved as <strong>pending</strong>. It won't show up on the public map until it's reviewed.
+    </p>
+  </section>
+
+  <!-- ============ lightbox ============ -->
+  <div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button id="lightbox-close" class="lightbox-close" aria-label="Close photo viewer">&times;</button>
+    <button id="lightbox-prev" class="lightbox-nav lightbox-prev" aria-label="Previous photo">&#8592;</button>
+    <img id="lightbox-img" class="lightbox-img" src="" alt="">
+    <button id="lightbox-next" class="lightbox-nav lightbox-next" aria-label="Next photo">&#8594;</button>
+  </div>
+
+  <footer class="site-footer">
+    <p><span class="c-magenta">est. 2026</span> &nbsp;·&nbsp; <span class="c-cyan">a project in the spirit of Little Free Library</span></p>
+  </footer>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="js/find.js"></script>
+</body>
+</html>

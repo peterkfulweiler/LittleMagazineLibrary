@@ -1,0 +1,206 @@
+/* ===========================================================
+   FREE MAGAZINE LIBRARY — retro / early-internet stylesheet
+   =========================================================== */
+
+:root {
+  --sky: #bdeeff;
+  --ink: #1a1a1a;
+  --magenta: #91b525;
+  --green: #dcff6a;
+  --gold: #ffd54a;
+  --cyan: #22e1ff;
+  --pink: #6fffa6;
+  --cream: #fffdf0;
+  --purple: #ff0000;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+
+  background-size: 60px 60px;
+  background-position: 0 0, 30px 30px;
+  min-height: 100vh;
+}
+
+.page-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  text-align: center;
+}
+
+.page-wrap > .sparkle-bar {
+  width: 100%;
+}
+
+/* ---------- sparkle bar ---------- */
+/*
+.sparkle-bar {
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: center;
+  letter-spacing: 4px;
+  font-size: 1.1rem;
+  color: var(--magenta);
+  background: var(--ink);
+  padding: 6px 0;
+  animation: twinkle 2.4s ease-in-out infinite;
+}
+*/
+@keyframes twinkle {
+  0%, 100% { color: var(--magenta); }
+  50% { color: var(--cyan); }
+}
+
+/* ---------- hero / bounce intro ---------- */
+.hero {
+  text-align: center;
+  padding: 3rem 1rem 1.5rem;
+}
+
+.hero-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.bounce-title {
+  margin: 0 0 0.75rem;
+  line-height: 1.15;
+}
+
+.bounce-title .line2 {
+  display: block;
+}
+
+.bounce-title .line1 {
+  font-size: 1.6rem;
+  letter-spacing: 6px;
+  color: var(--ink);
+}
+
+.bounce-title .line2 {
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  font-weight: bold;
+  color: var(--magenta);
+
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .bounce-title {
+    animation: dropBounce 1.9s cubic-bezier(0.28, 0.84, 0.42, 1) both;
+  }
+}
+
+@keyframes dropBounce {
+  0%   { transform: translateY(-480px); opacity: 0; }
+  8%   { opacity: 1; }
+  45%  { transform: translateY(0); }
+  58%  { transform: translateY(-90px); }
+  70%  { transform: translateY(0); }
+  80%  { transform: translateY(-40px); }
+  90%  { transform: translateY(0); }
+  95%  { transform: translateY(-14px); }
+  100% { transform: translateY(0); }
+}
+
+.tagline {
+  font-size: 1.05rem;
+  margin: 0.5rem 0 1rem;
+}
+
+/* ---------- funky text colors ---------- */
+.c-green   { color: #0a36ae; }
+.c-gold    { color: #0bb819; }
+.c-cyan    { color: #43b8b6; }
+.c-pink    { color: #e0389a; }
+.c-purple  { color: #7a3fc9; }
+.c-magenta { color: var(--magenta); }
+
+
+/* ---------- rainbow rule ---------- */
+
+/* ---------- button grid ---------- */
+
+
+@media (max-width: 520px) {
+  .button-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.funky-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.funky-btn:hover,
+.funky-btn:focus-visible {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0 var(--ink);
+}
+
+.funky-btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.btn-icon {
+  font-size: 1.3rem;
+}
+
+.btn-green { background: var(--green); }
+.btn-gold  { background: var(--gold); }
+.btn-cyan  { background: var(--cyan); }
+.btn-pink  { background: var(--pink); }
+
+/* ---------- statement board ---------- */
+.statement-wrap {
+  max-width: 640px;
+  margin: 2rem auto 3rem;
+  padding: 0 1rem;
+}
+
+.statement-board {
+  background: var(--cream);
+  border: 3px dashed var(--purple);
+  border-radius: 14px;
+  padding: 1.75rem 1.75rem 1.5rem;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.15);
+}
+
+.board-heading {
+  margin-top: 0;
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: var(--purple);
+}
+
+.statement-board p {
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+.statement-board p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- footer ---------- */
+.site-footer {
+  text-align: center;
+  padding: 1.25rem 1rem 2rem;
+  font-size: 0.9rem;
+  color: var(--ink);
+}
